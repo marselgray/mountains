@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;700&family=Public+Sans:ital,wght@0,300;0,400;0,600;0,700;1,700&display=swap');
+
+
+/* CSS reset */
+*, 
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+*:focus{
+	outline: none;
+}
+
+// mobile first design
+@mixin breakpoint($breakpoint) {
+	@if $breakpoint == small {
+		@media (min-width: 37.5em){
+			@content;
+		}
+	}
+
+	@if $breakpoint == medium {
+		@media (min-width: 46.25em){
+			@content;
+		}
+	}
+
+	@if $breakpoint == large {
+		@media (min-width: 75em){
+			@content;
+		}
+	}
+
+	@if $breakpoint == xlarge {
+		@media (min-width: 112.5em){
+			@content;
+		}
+	}
+}
+
+
+
+
+html{
+	font-size: 62.5%;
+	 scroll-behavior: smooth;
+	 overflow-x: hidden;
+
+	 @include breakpoint(large){
+		overflow-x: visible;
+	}
+}
+
+
+body{
+	box-sizing: border-box;
+	font-family: 'Public Sans', sans-serif;
+	color: #000;
+	overflow-x: hidden;
+}
+
+a{
+	text-decoration: none;
+}
+
+img{
+	width: 100%;
+	height: auto;
+}
+
+
+.hide{
+	display: none !important;
+}
